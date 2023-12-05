@@ -73,6 +73,7 @@
       mkdir ml-embedded-evaluation-kit
       tar -C ml-embedded-evaluation-kit  -xvzf 22.02.tar.gz
       cp -r download_dependencies.py ./ml-embedded-evaluation-kit/
+      cp -r set_up_default_resources.py ./ml-embedded-evaluation-kit/
       cd ml-embedded-evaluation-kit/
       rm -rf ./dependencies
       python3 ./download_dependencies.py
