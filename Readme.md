@@ -2,18 +2,18 @@
 
 - This repository is for building and deploying examples on FVP simulate environment. 
 - The example including 
-  - [Person detection example without vela](#build-with-person-detection-tflite-mdoel-without-passing-vela): 
+  - [Person detection example without vela](#build-with-person-detection-tflite-model-without-passing-vela): 
     - Input image size: 96 x 96 x 1 (Monochrome)
     - Using google person detection example model without passing vela run inference with cortex-m55.
   - [How to use HIMAX config file to generate vela model](#how-to-use-himax-config-file-to-generate-vela-model)
-  - [Person detection example run inference with Ethos-U55 NPU](#build-with-person-detection-tflite-mdoel-passing-vela):
+  - [Person detection example run inference with Ethos-U55 NPU](#build-with-person-detection-tflite-model-passing-vela):
     - Input image size: 96 x 96 x 1 (Monochrome)
     - Using google person detection example model passing vela run inference with Ethos-U55 NPU.
-  - [Yolo Fastest Object detection example](#build-with-yolo-fastest-object-detection-tflite-mdoel-passing-vela):
+  - [Yolo Fastest Object detection example](#build-with-yolo-fastest-object-detection-tflite-model-passing-vela):
     - Input image size: 256 x 256 x 3 (RGB)
     - We only release the model which passes himax_vela.ini (Ethos-U55 64 MACS configuration).
     - We can run infernce using the images which captured by our own HIMAX 01B0 sensor.  
-  - [Yolo Fastest XL Object detection example](#build-with-yolo-fastest-xl-object-detection-tflite-mdoel-passing-vela):
+  - [Yolo Fastest XL Object detection example](#build-with-yolo-fastest-xl-object-detection-tflite-model-passing-vela):
     - Input image size: 256 x 256 x 3 (RGB)
     - We only release the model which passes himax_vela.ini (Ethos-U55 64 MACS configuration).
     - We can run infernce using the images which captured by our own HIMAX 01B0 sensor.
@@ -91,7 +91,7 @@
       cp -r ./vela/img_yolofastest_xl_relu6_256_himax ./ml-embedded-evaluation-kit/resources_downloaded/
       ```
 
-## Build with person detection tflite mdoel without passing vela
+## Build with person detection tflite model without passing vela
   - Go under folder of ml-embedded-evaluation-kit
     ```
     cd ml-embedded-evaluation-kit
@@ -109,7 +109,7 @@
     make -j4
     ```
 
-## Run with person detection tflite mdoel without passing vela and inference with only Cortex-M55
+## Run with person detection tflite model without passing vela and inference with only Cortex-M55
   - Go out and under the folder of ML_FVP_EVALUATION
     ```
     cd ../../
@@ -144,7 +144,7 @@
   - You will see the vela report on the terminal: 
   ![alt text](images/vela_report.png)
 
-## Build with person detection tflite mdoel passing vela
+## Build with person detection tflite model passing vela
   - Go under folder of ml-embedded-evaluation-kit
     ```
     cd ml-embedded-evaluation-kit
@@ -163,7 +163,7 @@
     make -j4
     ```
 
-## Run with person detection tflite mdoel passing vela and run inference using Ethos-U55 NPU 
+## Run with person detection tflite model passing vela and run inference using Ethos-U55 NPU 
   - Go out and under the folder of ML_FVP_EVALUATION
     ```
     cd ../../
@@ -185,7 +185,7 @@
       ![alt text](images/inference_input_image.png)
 
 
-## Build with Yolo Fastest Object detection tflite mdoel passing vela
+## Build with Yolo Fastest Object detection tflite model passing vela
   - Go under folder of ml-embedded-evaluation-kit
     ```
     cd ml-embedded-evaluation-kit
@@ -203,7 +203,7 @@
     ```
     make -j4
     ```
-## Run with Yolo Fastest Object detection tflite mdoel and inference only using Ethos-U55 NPU 
+## Run with Yolo Fastest Object detection tflite model and inference only using Ethos-U55 NPU 
   - Go out and under the folder of ML_FVP_EVALUATION
     ```
     cd ../../
@@ -230,7 +230,7 @@
 
 
 
-## Build with Yolo Fastest XL Object detection tflite mdoel passing vela
+## Build with Yolo Fastest XL Object detection tflite model passing vela
   - Go under folder of ml-embedded-evaluation-kit
     ```
     cd ml-embedded-evaluation-kit
@@ -249,7 +249,7 @@
     make -j4
     ```
 
-## Run with Yolo Fastest XL Object detection tflite mdoel and inference only using Ethos-U55 NPU 
+## Run with Yolo Fastest XL Object detection tflite model and inference only using Ethos-U55 NPU 
   - Go out and under the folder of ML_FVP_EVALUATION
     ```
     cd ../../
