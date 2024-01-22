@@ -9,11 +9,11 @@
   - [Person detection example run inference with Ethos-U55 NPU](#build-with-person-detection-tflite-model-passing-vela):
     - Input image size: 96 x 96 x 1 (Monochrome)
     - Using google person detection example model passing vela run inference with Ethos-U55 NPU.
-  - [Yolo Fastest Object detection example](#build-with-yolo-fastest-object-detection-tflite-model-passing-vela):
+  - [Yolo Fastest Object detection example](#build-with-yolo-fastest-object-detection-tflite-model-passing-vela): (We also provide the [model training example](https://github.com/HimaxWiseEyePlus/Model_Training_Example/tree/main/Yolo_Fastest_series_with_MOT_TF_Keras#tensorflow-keras-yolo-fastestyolo-fastest-xl-with-model-optimization))
     - Input image size: 256 x 256 x 3 (RGB)
     - We only release the model which passes himax_vela.ini (Ethos-U55 64 MACS configuration).
     - We can run infernce using the images which captured by our own HIMAX 01B0 sensor.  
-  - [Yolo Fastest XL Object detection example](#build-with-yolo-fastest-xl-object-detection-tflite-model-passing-vela):
+  - [Yolo Fastest XL Object detection example](#build-with-yolo-fastest-xl-object-detection-tflite-model-passing-vela): (We also provide the [model training example](https://github.com/HimaxWiseEyePlus/Model_Training_Example/tree/main/Yolo_Fastest_series_with_MOT_TF_Keras#tensorflow-keras-yolo-fastestyolo-fastest-xl-with-model-optimization))
     - Input image size: 256 x 256 x 3 (RGB)
     - We only release the model which passes himax_vela.ini (Ethos-U55 64 MACS configuration).
     - We can run infernce using the images which captured by our own HIMAX 01B0 sensor.
