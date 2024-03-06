@@ -14,24 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMG_YoloFastestRelu6HIMAX_EVT_HANDLER_HPP
-#define IMG_YoloFastestRelu6HIMAX_EVT_HANDLER_HPP
+#ifndef KWS_ASR_OUTPUT_DECODE_HPP
+#define KWS_ASR_OUTPUT_DECODE_HPP
 
-#include "AppContext.hpp"
+#include "AsrClassifier.hpp"
 #include <cstdint>
 namespace arm {
 namespace app {
+namespace audio {
+namespace asr {
 
     /**
-     * @brief       Handles the inference event.
-     * @param[in]   ctx        Pointer to the application context.
-     * @param[in]   imgIndex   Index to the image to classify.
-     * @param[in]   runAll     Flag to request classification of all the available images.
-     * @return      true or false based on execution success.
-     **/
-    bool ClassifyImageHandler(ApplicationContext& ctx, uint32_t imgIndex, bool runAll);
+     * @brief       Gets the top N classification results from the
+     *              output vector.
+     * @param[in]   vecResults   Label output from classifier.
+     * @return      true if successful, false otherwise.
+    **/
+    std::string DecodeOutput(const std::vector<ClassificationResult>& vecResults);
 
+} /* namespace asr */
+} /* namespace audio */
 } /* namespace app */
 } /* namespace arm */
 
-#endif /* IMG_CLASS_EVT_HANDLER_HPP */
+#endif /* KWS_ASR_OUTPUT_DECODE_HPP */

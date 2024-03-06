@@ -14,24 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMG_YoloFastestRelu6HIMAX_EVT_HANDLER_HPP
-#define IMG_YoloFastestRelu6HIMAX_EVT_HANDLER_HPP
-
+#ifndef AD_EVT_HANDLER_H
+#define AD_EVT_HANDLER_H
 #include "AppContext.hpp"
 #include <cstdint>
 namespace arm {
 namespace app {
-
     /**
-     * @brief       Handles the inference event.
-     * @param[in]   ctx        Pointer to the application context.
-     * @param[in]   imgIndex   Index to the image to classify.
-     * @param[in]   runAll     Flag to request classification of all the available images.
-     * @return      true or false based on execution success.
+     * @brief       Handles the inference event
+     * @param[in]   ctx         pointer to the application context
+     * @param[in]   dataIndex   index to the input data to classify
+     * @param[in]   runAll      flag to request classification of all the available audio clips
+     * @return      True or false based on execution success
      **/
-    bool ClassifyImageHandler(ApplicationContext& ctx, uint32_t imgIndex, bool runAll);
-
+    bool ClassifyVibrationHandler(ApplicationContext& ctx, uint32_t dataIndex, bool runAll);
 } /* namespace app */
 } /* namespace arm */
-
-#endif /* IMG_CLASS_EVT_HANDLER_HPP */
+#endif /* AD_EVT_HANDLER_H */

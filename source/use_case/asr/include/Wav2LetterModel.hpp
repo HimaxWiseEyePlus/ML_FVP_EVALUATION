@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Arm Limited. All rights reserved.
+ * Copyright (c) 2021 Arm Limited. All rights reserved.rved.
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMG_PRRSON_Person_Detect_Model_HPP
-#define IMG_PRRSON_Person_Detect_Model_HPP
+#ifndef ASR_WAV2LETTER_MODEL_HPP
+#define ASR_WAV2LETTER_MODEL_HPP
 
 #include "Model.hpp"
 #include <cstdint>
+extern const int g_FrameLength;
+extern const int g_FrameStride;
+extern const float g_ScoreThreshold;
+extern const int g_ctxLen;
+
 namespace arm {
 namespace app {
 
-    class Person_Detect_Model : public Model {
+    class Wav2LetterModel : public Model {
 
     public:
-        /* Indices for the expected model - based on input tensor shape */
-        static constexpr uint32_t ms_inputRowsIdx     = 1;
-        static constexpr uint32_t ms_inputColsIdx     = 2;
-        static constexpr uint32_t ms_inputChannelsIdx = 3;
+        /* Indices for the expected model - based on input and output tensor shapes */
+        static constexpr uint32_t ms_inputRowsIdx  = 1;
+        static constexpr uint32_t ms_inputColsIdx  = 2;
+        static constexpr uint32_t ms_outputRowsIdx = 2;
+        static constexpr uint32_t ms_outputColsIdx = 3;
 
     protected:
         /** @brief   Gets the reference to op resolver interface class. */
@@ -43,7 +49,7 @@ namespace app {
 
     private:
         /* Maximum number of individual operations that can be enlisted. */
-        static constexpr int ms_maxOpCnt = 13;
+        static constexpr int ms_maxOpCnt = 5;
 
         /* A mutable op resolver instance. */
         tflite::MicroMutableOpResolver<ms_maxOpCnt> m_opResolver;
@@ -52,4 +58,4 @@ namespace app {
 } /* namespace app */
 } /* namespace arm */
 
-#endif /* IMG_PRRSON_Person_Detect_Model_HPP */
+#endif /* ASR_WAV2LETTER_MODEL_HPP */

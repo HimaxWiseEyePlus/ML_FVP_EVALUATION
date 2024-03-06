@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Arm Limited. All rights reserved.
+ * Copyright (c) 2022 Arm Limited. All rights reserved.
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMG_PRRSON_Person_Detect_Model_HPP
-#define IMG_PRRSON_Person_Detect_Model_HPP
+#ifndef YOLO_FASTEST_MODEL_HPP
+#define YOLO_FASTEST_MODEL_HPP
 
 #include "Model.hpp"
 #include <cstdint>
+extern const int originalImageSize;
+extern const int channelsImageDisplayed;
+extern const float anchor1[];
+extern const float anchor2[];
+
 namespace arm {
 namespace app {
 
-    class Person_Detect_Model : public Model {
+    class YoloFastestModel : public Model {
 
     public:
         /* Indices for the expected model - based on input tensor shape */
@@ -43,7 +48,7 @@ namespace app {
 
     private:
         /* Maximum number of individual operations that can be enlisted. */
-        static constexpr int ms_maxOpCnt = 13;
+        static constexpr int ms_maxOpCnt = 8;
 
         /* A mutable op resolver instance. */
         tflite::MicroMutableOpResolver<ms_maxOpCnt> m_opResolver;
@@ -52,4 +57,4 @@ namespace app {
 } /* namespace app */
 } /* namespace arm */
 
-#endif /* IMG_PRRSON_Person_Detect_Model_HPP */
+#endif /* YOLO_FASTEST_MODEL_HPP */

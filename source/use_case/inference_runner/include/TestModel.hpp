@@ -14,42 +14,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMG_PRRSON_Person_Detect_Model_HPP
-#define IMG_PRRSON_Person_Detect_Model_HPP
+#ifndef INF_RUNNER_TESTMODEL_HPP
+#define INF_RUNNER_TESTMODEL_HPP
 
 #include "Model.hpp"
 #include <cstdint>
 namespace arm {
 namespace app {
 
-    class Person_Detect_Model : public Model {
-
-    public:
-        /* Indices for the expected model - based on input tensor shape */
-        static constexpr uint32_t ms_inputRowsIdx     = 1;
-        static constexpr uint32_t ms_inputColsIdx     = 2;
-        static constexpr uint32_t ms_inputChannelsIdx = 3;
+    class TestModel : public Model {
 
     protected:
         /** @brief   Gets the reference to op resolver interface class. */
-        const tflite::MicroOpResolver& GetOpResolver() override;
+        const tflite::AllOpsResolver& GetOpResolver() override;
 
-        /** @brief   Adds operations to the op resolver instance. */
-        bool EnlistOperations() override;
+        /** @brief   Adds operations to the op resolver instance, not needed as using AllOpsResolver. */
+        bool EnlistOperations() override {return false;}
 
         const uint8_t* ModelPointer() override;
 
         size_t ModelSize() override;
 
     private:
-        /* Maximum number of individual operations that can be enlisted. */
-        static constexpr int ms_maxOpCnt = 13;
 
-        /* A mutable op resolver instance. */
-        tflite::MicroMutableOpResolver<ms_maxOpCnt> m_opResolver;
+        /* No need to define individual ops at the cost of extra memory. */
+        tflite::AllOpsResolver m_opResolver;
     };
 
 } /* namespace app */
 } /* namespace arm */
 
-#endif /* IMG_PRRSON_Person_Detect_Model_HPP */
+#endif /* INF_RUNNER_TESTMODEL_HPP */

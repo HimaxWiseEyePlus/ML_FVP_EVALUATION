@@ -14,27 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMG_PRRSON_Person_Detect_Model_HPP
-#define IMG_PRRSON_Person_Detect_Model_HPP
+#ifndef AD_MODEL_HPP
+#define AD_MODEL_HPP
 
 #include "Model.hpp"
 #include <cstdint>
+extern const int g_FrameLength;
+extern const int g_FrameStride;
+extern const float g_ScoreThreshold;
+extern const float g_TrainingMean;
+
 namespace arm {
 namespace app {
 
-    class Person_Detect_Model : public Model {
-
-    public:
-        /* Indices for the expected model - based on input tensor shape */
-        static constexpr uint32_t ms_inputRowsIdx     = 1;
-        static constexpr uint32_t ms_inputColsIdx     = 2;
-        static constexpr uint32_t ms_inputChannelsIdx = 3;
-
+    class AdModel : public Model {
     protected:
-        /** @brief   Gets the reference to op resolver interface class. */
+        /** @brief   Gets the reference to op resolver interface class */
         const tflite::MicroOpResolver& GetOpResolver() override;
 
-        /** @brief   Adds operations to the op resolver instance. */
+        /** @brief   Adds operations to the op resolver instance */
         bool EnlistOperations() override;
 
         const uint8_t* ModelPointer() override;
@@ -42,14 +40,14 @@ namespace app {
         size_t ModelSize() override;
 
     private:
-        /* Maximum number of individual operations that can be enlisted. */
-        static constexpr int ms_maxOpCnt = 13;
+        /* Maximum number of individual operations that can be enlisted */
+        static constexpr int ms_maxOpCnt = 6;
 
-        /* A mutable op resolver instance. */
+        /* A mutable op resolver instance */
         tflite::MicroMutableOpResolver<ms_maxOpCnt> m_opResolver;
     };
 
 } /* namespace app */
 } /* namespace arm */
 
-#endif /* IMG_PRRSON_Person_Detect_Model_HPP */
+#endif /* AD_MODEL_HPP */

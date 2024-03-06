@@ -14,24 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMG_YoloFastestRelu6HIMAX_EVT_HANDLER_HPP
-#define IMG_YoloFastestRelu6HIMAX_EVT_HANDLER_HPP
+#ifndef CLASSIFICATION_RESULT_HPP
+#define CLASSIFICATION_RESULT_HPP
 
-#include "AppContext.hpp"
+#include <string>
 #include <cstdint>
 namespace arm {
 namespace app {
 
     /**
-     * @brief       Handles the inference event.
-     * @param[in]   ctx        Pointer to the application context.
-     * @param[in]   imgIndex   Index to the image to classify.
-     * @param[in]   runAll     Flag to request classification of all the available images.
-     * @return      true or false based on execution success.
-     **/
-    bool ClassifyImageHandler(ApplicationContext& ctx, uint32_t imgIndex, bool runAll);
+     * @brief   Class representing a single classification result.
+     */
+    class ClassificationResult {
+    public:
+        double          m_normalisedVal = 0.0;
+        std::string     m_label;
+        uint32_t        m_labelIdx = 0;
+
+        ClassificationResult() = default;
+        ~ClassificationResult() = default;
+    };
 
 } /* namespace app */
 } /* namespace arm */
 
-#endif /* IMG_CLASS_EVT_HANDLER_HPP */
+#endif /* CLASSIFICATION_RESULT_HPP */

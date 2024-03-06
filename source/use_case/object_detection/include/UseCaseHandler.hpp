@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Arm Limited. All rights reserved.
+ * Copyright (c) 2022 Arm Limited. All rights reserved.
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,8 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMG_YoloFastestRelu6HIMAX_EVT_HANDLER_HPP
-#define IMG_YoloFastestRelu6HIMAX_EVT_HANDLER_HPP
+#ifndef OBJ_DET_HANDLER_HPP
+#define OBJ_DET_HANDLER_HPP
 
 #include "AppContext.hpp"
 #include <cstdint>
@@ -25,13 +25,13 @@ namespace app {
     /**
      * @brief       Handles the inference event.
      * @param[in]   ctx        Pointer to the application context.
-     * @param[in]   imgIndex   Index to the image to classify.
+     * @param[in]   imgIndex   Index to the image to run object detection.
      * @param[in]   runAll     Flag to request classification of all the available images.
      * @return      true or false based on execution success.
      **/
-    bool ClassifyImageHandler(ApplicationContext& ctx, uint32_t imgIndex, bool runAll);
+    bool ObjectDetectionHandler(ApplicationContext& ctx, uint32_t imgIndex, bool runAll);
 
 } /* namespace app */
 } /* namespace arm */
 
-#endif /* IMG_CLASS_EVT_HANDLER_HPP */
+#endif /* OBJ_DET_HANDLER_HPP */

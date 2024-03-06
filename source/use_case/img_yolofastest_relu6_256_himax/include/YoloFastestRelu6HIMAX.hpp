@@ -18,7 +18,7 @@
 #define IMG_YoloFastestRelu6HIMAX_HPP
 
 #include "Model.hpp"
-
+#include <cstdint>
 namespace arm {
 namespace app {
 

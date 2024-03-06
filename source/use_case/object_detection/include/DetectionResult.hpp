@@ -35,8 +35,7 @@ namespace object_detection {
          * @param[in]   w               Detection result width
          * @param[in]   h               Detection result height
          **/
-        DetectionResult(int class_d,double normalisedVal,int x0,int y0, int w,int h) :
-                m_class(class_d),
+        DetectionResult(double normalisedVal,int x0,int y0, int w,int h) :
                 m_normalisedVal(normalisedVal),
                 m_x0(x0),
                 m_y0(y0),
@@ -47,7 +46,7 @@ namespace object_detection {
 
         DetectionResult() = default;
         ~DetectionResult() = default;
-        int     m_class{0};
+
         double  m_normalisedVal{0.0};
         int     m_x0{0};
         int     m_y0{0};

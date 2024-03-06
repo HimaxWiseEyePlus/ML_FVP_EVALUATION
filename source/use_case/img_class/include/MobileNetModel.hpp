@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMG_PRRSON_Person_Detect_Model_HPP
-#define IMG_PRRSON_Person_Detect_Model_HPP
+#ifndef IMG_CLASS_MOBILENETMODEL_HPP
+#define IMG_CLASS_MOBILENETMODEL_HPP
 
 #include "Model.hpp"
 #include <cstdint>
 namespace arm {
 namespace app {
 
-    class Person_Detect_Model : public Model {
+    class MobileNetModel : public Model {
 
     public:
         /* Indices for the expected model - based on input tensor shape */
@@ -43,7 +43,7 @@ namespace app {
 
     private:
         /* Maximum number of individual operations that can be enlisted. */
-        static constexpr int ms_maxOpCnt = 13;
+        static constexpr int ms_maxOpCnt = 7;
 
         /* A mutable op resolver instance. */
         tflite::MicroMutableOpResolver<ms_maxOpCnt> m_opResolver;
@@ -52,4 +52,4 @@ namespace app {
 } /* namespace app */
 } /* namespace arm */
 
-#endif /* IMG_PRRSON_Person_Detect_Model_HPP */
+#endif /* IMG_CLASS_MOBILENETMODEL_HPP */
