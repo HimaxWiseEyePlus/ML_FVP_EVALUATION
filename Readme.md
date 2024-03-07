@@ -20,6 +20,11 @@
 - To run evaluations using this software, we suggest using Ubuntu 20.04 LTS environment.
 
 ## Prerequisites
+  - Download the github repository:
+    ```
+    git clone https://github.com/HimaxWiseEyePlus/ML_FVP_EVALUATION
+    cd ML_FVP_EVALUATION
+    ```
   - Install the toolkits listed below:
     - Install necessary packages:
       ```
