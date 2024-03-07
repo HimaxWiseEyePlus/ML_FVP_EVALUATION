@@ -62,7 +62,7 @@
       tar -xjf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
 
       # Add gcc-arm-none-eabi/bin into PATH environment variable.
-      export PATH="${PATH}:/[location of your GCC_ARM_NONE_EABI_TOOLCHAIN_ROOT]/gcc-arm-none-eabi/bin"
+      export PATH="${PATH}:/[location of your GCC_ARM_NONE_EABI_TOOLCHAIN_ROOT]/bin"
       ```
     - Arm ML embedded evaluation kit Machine Learning (ML) applications targeted for Arm Cortex-M55 and Arm Ethos-U55 NPU.
       - We use Arm ML embedded evaluation kit to run the Person detection FVP example.
