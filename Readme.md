@@ -43,7 +43,7 @@
     - Corstone SSE-300 FVP: aligned with the Arm MPS3 development platform and includes both the Cortex-M55 and the Ethos-U55 processors.
       ```
       # Fetch Corstone SSE-300 FVP
-      wget https://developer.arm.com/-/media/Arm%20Developer%20Community/Downloads/OSS/FVP/Corstone-300/MPS3/FVP_Corstone_SSE-300_Ethos-U55_11.14_24.tgz
+      wget --no-check-certificate https://developer.arm.com/-/media/Arm%20Developer%20Community/Downloads/OSS/FVP/Corstone-300/MPS3/FVP_Corstone_SSE-300_Ethos-U55_11.14_24.tgz
       ```
       ![alt text](images/Fetch_Corstone_SSE_300_FVP.png)
       ```
@@ -61,7 +61,7 @@
     - GNU Arm Embedded Toolchain 10-2020-q4-major is the only version supports Cortex-M55.
       ```
       # fetch the arm gcc toolchain.
-      wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+      wget --no-check-certificate https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
 
       # Extract the archive
       tar -xjf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
@@ -73,7 +73,7 @@
       - We use Arm ML embedded evaluation kit to run the Person detection FVP example.
       ```
       # Fetch Arm ML embedded evaluation kit
-      wget https://review.mlplatform.org/plugins/gitiles/ml/ethos-u/ml-embedded-evaluation-kit/+archive/refs/tags/22.02.tar.gz
+      wget --no-check-certificate https://review.mlplatform.org/plugins/gitiles/ml/ethos-u/ml-embedded-evaluation-kit/+archive/refs/tags/22.02.tar.gz
 
       mkdir ml-embedded-evaluation-kit
       tar -C ml-embedded-evaluation-kit  -xvzf 22.02.tar.gz

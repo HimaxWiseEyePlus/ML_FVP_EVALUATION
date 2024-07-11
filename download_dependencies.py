@@ -24,6 +24,10 @@ from urllib.request import urlopen
 from zipfile import ZipFile
 from pathlib import Path
 
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
 TF = "https://github.com/tensorflow/tflite-micro/archive/02715237c1fc0a23f465226364d206277f54ebce.zip"
 CMSIS = "https://github.com/ARM-software/CMSIS_5/archive/29615088b12e3ba8ce50d316cf7f38c1bd7fc620.zip"
 ETHOS_U_CORE_DRIVER = "https://git.mlplatform.org/ml/ethos-u/ethos-u-core-driver.git/snapshot/ethos-u-core-driver-22.05.tar.gz"
