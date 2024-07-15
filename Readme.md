@@ -158,7 +158,7 @@
     ```
     vela --accelerator-config ethos-u55-64 --config himax_vela.ini --system-config My_Sys_Cfg --memory-mode My_Mem_Mode_Parent --output-dir ./img_person_detect ./img_person_detect/person_int8_model.tflite
     ```
-  - You will see the vela report on the terminal: 
+  - You will see the vela report on the terminal: (Notes: Total SRAM less than `900 KB` will be better)
   ![alt text](images/vela_report.png)
 
 ## Build with person detection tflite model passing vela
