@@ -67,18 +67,20 @@
 
       # Extract the archive
       tar -xjf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-
-      # Add gcc-arm-none-eabi/bin into PATH environment variable.
+      ```
+    
+    - Add `your own gcc-arm-none-eabi/bin path` into PATH environment variable.
+      ```
       export PATH="${PATH}:/[location of your GCC_ARM_NONE_EABI_TOOLCHAIN_ROOT]/bin"
       ```
     - Arm ML embedded evaluation kit Machine Learning (ML) applications targeted for Arm Cortex-M55 and Arm Ethos-U55 NPU.
       - We use Arm ML embedded evaluation kit to run the Person detection FVP example.
       ```
       # Fetch Arm ML embedded evaluation kit
-      wget https://review.mlplatform.org/plugins/gitiles/ml/ethos-u/ml-embedded-evaluation-kit/+archive/refs/tags/22.02.tar.gz
+      wget https://gitlab.arm.com/artificial-intelligence/ethos-u/ml-embedded-evaluation-kit/-/archive/22.02/ml-embedded-evaluation-kit-22.02.tar.gz
 
-      mkdir ml-embedded-evaluation-kit
-      tar -C ml-embedded-evaluation-kit  -xvzf 22.02.tar.gz
+      tar -xvzf ml-embedded-evaluation-kit-22.02.tar.gz
+      mv ml-embedded-evaluation-kit-22.02 ml-embedded-evaluation-kit
       cp -r ./source/application/main/include ./ml-embedded-evaluation-kit/source/application/main
       cp -r ./source/application/tensorflow-lite-micro/include ./ml-embedded-evaluation-kit/source/application/tensorflow-lite-micro
       cp -r ./source/profiler/include ./ml-embedded-evaluation-kit/source/profiler
@@ -125,7 +127,7 @@
     ```
   - Finally, Compile the person detection example.
     ```
-    make -j4
+    make -j8
     ```
 
 ## Run with person detection tflite model without passing vela and inference with only Cortex-M55
@@ -179,7 +181,7 @@
     ```
   - Compile the person detection example
     ```
-    make -j4
+    make -j8
     ```
 
 ## Run with person detection tflite model passing vela and run inference using Ethos-U55 NPU 
@@ -220,7 +222,7 @@
     ```
   - Compile the Yolo Fastest Object detection example
     ```
-    make -j4
+    make -j8
     ```
 ## Run with Yolo Fastest Object detection tflite model and inference only using Ethos-U55 NPU 
   - Go out and under the folder of ML_FVP_EVALUATION
@@ -265,7 +267,7 @@
     ```
   - Compile the Yolo Fastest XL Object detection example
     ```
-    make -j4
+    make -j8
     ```
 
 ## Run with Yolo Fastest XL Object detection tflite model and inference only using Ethos-U55 NPU 
@@ -303,5 +305,13 @@
         ```
           cmake ../ -DUSE_CASE_BUILD=img_class \-DETHOS_U_NPU_ENABLED=ON \-DETHOS_U_NPU_CONFIG_ID=H64
 
-          make -j4
+          make -j8
           ``` 
+  - If you want to accelerate the execution time about ethos U55 on FVP, you can add following command at your run command while you execute. The NPU report time is not real while you add following command.
+    ```
+    -C ethosu.extra_args="--fast"
+    ```
+    for example
+    ```
+    CS300FVP/models/Linux64_GCC-6.4/FVP_Corstone_SSE-300_Ethos-U55 -C ethosu.num_macs=64 -C ethosu.extra_args="--fast" ml-embedded-evaluation-kit/build_img_yolofastest_xl_relu6_256_himax_npu/bin/ethos-u-img_yolofastest_xl_relu6_256_himax.axf
+    ```
